@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "esnext",
+    "target": "es2015",
+    "lib": ["dom", "es2015", "es2016", "es5"],
+    "moduleResolution": "node",
+    "jsx": "react",
+    "jsxFactory": "h",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "removeComments": false,
+    "baseUrl": "./src/",
+    "allowJs": true,
+    "outDir": "./build/tsc"
+  },
+
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.js"
+  ]
+}

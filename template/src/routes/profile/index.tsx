@@ -1,9 +1,20 @@
 import { h, Component } from 'preact';
 import Button from 'preact-material-components/Button';
 import 'preact-material-components/Button/style.css';
-import style from './style';
+import * as style from './style.css';
 
-export default class Profile extends Component {
+export interface ProfileProps {
+	user?: any;
+}	
+
+export interface ProfileState {
+	time: number;
+	count: number;
+}
+
+export default class Profile extends Component<ProfileProps, ProfileState> {
+	timer: any;
+
 	state = {
 		time: Date.now(),
 		count: 10
@@ -30,7 +41,7 @@ export default class Profile extends Component {
 	};
 
 	// Note: `user` comes from the URL, courtesy of our router
-	render({ user }, { time, count }) {
+	render({ user }: ProfileProps, { time, count }:ProfileState) {
 		return (
 			<div class={style.profile}>
 				<h1>Profile: {user}</h1>

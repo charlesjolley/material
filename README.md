@@ -2,7 +2,7 @@
 
 ## Documentation
 
-- This is a material template for [preact-cli](https://github.com/developit/preact-cli) using [preact-material-components](https://github.com/prateekbh/preact-material-components).
+- This is a material template for [preact-cli](https://github.com/developit/preact-cli) using [preact-material-components](https://github.com/prateekbh/preact-material-components) and [TypeScript](https://typescriptlang.org)
 - [For Preact](https://preactjs.com/): General information about how to work with Preact, not specific to this template
 
 ## Usage

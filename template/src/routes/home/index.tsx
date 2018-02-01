@@ -2,9 +2,12 @@ import { h, Component } from 'preact';
 import Card from 'preact-material-components/Card';
 import 'preact-material-components/Card/style.css';
 import 'preact-material-components/Button/style.css';
-import style from './style';
+import * as style from './style.css';
 
-export default class Home extends Component {
+export interface HomeProps { }
+export interface HomeState { }
+
+export default class Home extends Component<HomeProps, HomeState> {
 	render() {
 		return (
 			<div class={style.home}>
