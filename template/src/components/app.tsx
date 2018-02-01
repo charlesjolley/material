@@ -1,11 +1,12 @@
 import { h, Component } from 'preact';
-import { Router } from 'preact-router';
-
+import Router from 'preact-router';
+import AsyncRoute from 'preact-async-route';
 import Header from './header';
-import Home from '../routes/home';
-import Profile from '../routes/profile';
 
 export interface AppProps { }
+
+const getHome = () => import('../routes/home').then(x => x.default);
+const getProfile = () => import('../routes/profile').then(x => x.default);
 
 export default class App extends Component<AppProps, {}> {
 
@@ -24,9 +25,9 @@ export default class App extends Component<AppProps, {}> {
 			<div id="app">
 				<Header />
 				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
+					<AsyncRoute path="/" getComponent={getHome} />
+					<AsyncRoute path="/profile" user="me" getComponent={getProfile} />
+					<AsyncRoute path="/profile/:user" getComponent={getProfile} />
 				</Router>
 			</div>
 		);
